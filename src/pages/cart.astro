@@ -121,8 +121,9 @@ import Layout from '../components/Layout.astro';
       }
       let data;
       try {
-        console.log('Fetching /api/create-checkout with cart:', cart);
-        const res = await fetch('/api/create-checkout', {
+        const endpoint = location.hostname === 'localhost' ? '/api/create-checkout' : '/.netlify/functions/create-checkout';
+        console.log('Fetching', endpoint, 'with cart:', cart);
+        const res = await fetch(endpoint, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ items: cart }),
