@@ -12,6 +12,29 @@ const { title } = Astro.props;
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="TerraTAC: High-quality tactical and survival gear for professionals and enthusiasts." />
+    <meta name="keywords" content="tactical gear, survival, TerraTAC, outdoor, equipment, shop" />
+    <meta property="og:title" content="TerraTAC - Tactical & Survival Gear" />
+    <meta property="og:description" content="High-quality tactical and survival gear for professionals and enthusiasts." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://terratac.co.uk/" />
+    <meta property="og:image" content="https://terratac.co.uk/logo.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="TerraTAC - Tactical & Survival Gear" />
+    <meta name="twitter:description" content="High-quality tactical and survival gear for professionals and enthusiasts." />
+    <meta name="twitter:image" content="https://terratac.co.uk/logo.png" />
+    <link rel="canonical" href="https://terratac.co.uk/" />
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+    <!-- Google Analytics (replace with your GA4 ID) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    <meta charset="UTF-8" />
     <title>{title ? `${title} - TerraTAC` : 'TerraTAC - All Your Tactical Gear Needs'}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Professional tactical gear supplier in the UK. Quality equipment for law enforcement, security, and outdoor professionals." />
@@ -56,6 +79,7 @@ const { title } = Astro.props;
           <a href="/" class="hover:text-blue-400">Home</a>
           <a href="/cart" class="hover:text-blue-400">Cart</a>
           <a href="/about" class="hover:text-blue-400">About</a>
+          <a href="/blog" class="hover:text-blue-400">Blog</a>
         </div>
         <p class="text-sm text-gray-400">&copy; 2025 TerraTAC. All rights reserved.</p>
         <div class="flex justify-center mt-4">
