@@ -95,7 +95,7 @@ import Layout from '../components/Layout.astro';
           if (!name) name = productMap[item.id].name;
           img = productMap[item.id].img;
         }
-        return `<div class="mb-2 flex items-center gap-2">${img ? `<img src="${img}" alt="${name || item.id}" class="h-8 w-8 object-contain rounded" />` : ''}Product: <b>${name || item.id}</b> &times; ${item.qty} &mdash; ${item.price || ''}</div>`;
+        return `<div class="mb-4 flex items-center gap-4">${img ? `<img src="${img}" alt="${name || item.id}" class="h-16 w-16 object-contain rounded shadow" />` : ''}<span class="text-xl font-bold">${name || item.id}</span> &times; <span class="text-lg">${item.qty}</span> &mdash; <span class="text-lg">${item.price || ''}</span></div>`;
       }).join('');
     }
     document.addEventListener('DOMContentLoaded', renderCart);
