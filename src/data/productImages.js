@@ -25,7 +25,7 @@ export const productImages = {
   "tac-thermal-scope": "/products/tac-thermal-scope.png",
   "starter-backpack": "/products/starter-backpack.png",
 
-  "tac-balaclava": "/products/TAC-Balaclava.png",
+  "tac-balaclava": "/products/tac-balaclava.png",
   "starter-tac-belt": "/products/starter-tac-belt.png",
 
   "placeholder": "/products/placeholder.svg"

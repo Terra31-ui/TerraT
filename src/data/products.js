@@ -205,7 +205,7 @@ export const catalogue = [
   {
     id: "tac-balaclava",
     name: "TAC-Balaclava",
-    img: "/products/TAC-Balaclava.png",
+    img: "/products/tac-balaclava.png",
     href: "/products/tac-balaclava",
     price: "£20.00",
     category: "Apparel",
