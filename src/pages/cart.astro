@@ -7,7 +7,7 @@ import Layout from '../components/Layout.astro';
   <header class="flex justify-center bg-white shadow-lg p-4 mb-8 rounded-lg mt-20 sm:mt-40">
     <div class="flex flex-col sm:flex-row justify-center items-center gap-2 sm:gap-4">
       <a href="/" aria-label="Go to homepage">
-        <img src="/favicon.svg" alt="TerraTAC Logo" class="h-10 w-10 md:h-12 md:w-12 hover:scale-105 transition-transform duration-200 cursor-pointer" style="min-width:2rem; min-height:2rem;" />
+        <img src="/favicon.svg" alt="TerraTAC Logo" class="h-10 w-10 md:h-12 md:w-12 hover:scale-105 transition-transform duration-200 cursor-pointer" style="min-width:2rem; min-height:2rem;" width="48" height="48" loading="lazy" />
       </a>
       <h1 class="text-2xl sm:text-3xl font-bold text-center">Forgot Something?</h1>
       <a href="/" class="mt-2 sm:mt-0 bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors text-base shadow">Jump Back In</a>
@@ -39,7 +39,7 @@ import Layout from '../components/Layout.astro';
 
     <!-- Stripe Climate Badge -->
     <div class="flex items-center gap-2 mt-8">
-      <img src="/stripe-climate-badge.svg" alt="Stripe Climate Badge" class="h-8 w-auto" />
+      <img src="/stripe-climate-badge.svg" alt="Stripe Climate Badge" class="h-8 w-auto" width="120" height="24" loading="lazy" />
       <span class="text-green-700 font-semibold">
         We support permanent carbon removal with <a href="https://stripe.com/climate" target="_blank" class="underline text-green-800">Stripe Climate</a>
       </span>
