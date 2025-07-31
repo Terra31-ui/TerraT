@@ -4,14 +4,14 @@ import Layout from '../components/Layout.astro';
 ---
 
 <Layout title="Your Cart">
-  <header class="flex items-center bg-white shadow-lg p-4 mb-8 rounded-lg">
-    <a href="/" class="text-base font-bold text-black hover:text-white hover:bg-red-600 hover:border-red-700 border-2 border-transparent px-3 py-1 rounded shadow transition-all duration-200">
+  <header class="flex flex-col sm:flex-row items-center bg-white shadow-lg p-4 mb-8 rounded-lg gap-2 sm:gap-0 mt-28">
+    <a href="/" class="text-base font-bold text-black hover:text-white hover:bg-red-600 hover:border-red-700 border-2 border-transparent px-3 py-1 rounded shadow transition-all duration-200 mb-2 sm:mb-0 sm:mr-4">
       Home
     </a>
-    <div class="flex-1 flex justify-center items-center gap-4">
+    <div class="flex-1 flex flex-col sm:flex-row justify-center items-center gap-2 sm:gap-4 w-full">
       <img src="/favicon.svg" alt="British Flag" class="h-8 w-8 md:h-10 md:w-10" style="min-width:2rem; min-height:2rem;" />
-      <h1 class="text-3xl font-bold text-center">Forgot Something?</h1>
-      <a href="/" class="ml-2 bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors text-base shadow">Jump Back In</a>
+      <h1 class="text-2xl sm:text-3xl font-bold text-center">Forgot Something?</h1>
+      <a href="/" class="mt-2 sm:mt-0 bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors text-base shadow">Jump Back In</a>
     </div>
   </header>
   <section class="max-w-3xl mx-auto py-12 px-4">
