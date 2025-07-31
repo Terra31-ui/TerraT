@@ -22,7 +22,7 @@ if (!product) {
 <Layout title={`${product.name} - TerraTAC`}>
   <section class="max-w-3xl mx-auto py-12 px-4">
     <div class="flex flex-col md:flex-row gap-8 items-center">
-      <img src={product.img} alt={product.name} class="w-64 h-64 object-contain rounded shadow" />
+      <img src={product.img} alt={product.name} class="w-64 h-64 object-contain rounded shadow" width="256" height="256" loading="lazy" />
       <div>
         <h1 class="text-3xl font-bold mb-2">{product.name}</h1>
         <div class="text-2xl font-bold text-green-700 mb-4">{product.price}</div>
