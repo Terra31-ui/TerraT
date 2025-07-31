@@ -67,7 +67,7 @@ const { title } = Astro.props;
       function updateCartCounter() {
         const cart = JSON.parse(localStorage.getItem('cart')) || [];
         const counter = document.getElementById('cart-count');
-        
+        if (!counter) return;
         if (cart.length > 0) {
           const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
           counter.textContent = totalItems;
