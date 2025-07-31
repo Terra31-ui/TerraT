@@ -1,6 +1,13 @@
 ---
+
 import Layout from '../../components/Layout.astro';
 import { catalogue } from '../../data/products.js';
+
+export async function getStaticPaths() {
+  return catalogue.map(product => ({
+    params: { slug: product.id },
+  }));
+}
 
 const { slug } = Astro.params;
 
