@@ -1,6 +1,0 @@
-#!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
-
-# Run backup before commit
-echo "Running backup before commit..."
-./backup.sh
