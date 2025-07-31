@@ -1,0 +1,24 @@
+
+PRODUCT: TAC mid-layer
+FILENAME: tac-mid-layer.jpg
+STATUS: needed
+
+=== BASIC PROMPT ===
+Black tactical fleece jacket, military mid-layer, front view on white background, professional studio photography
+
+=== ENHANCED PROMPT (RECOMMENDED) ===
+Black tactical fleece jacket with full zip, military mid-layer clothing, front view on pure white background, professional studio photography, commercial lighting, no person wearing
+
+=== ALTERNATIVE VARIATIONS ===
+Variation 1: Black tactical fleece jacket with full zip, military mid-layer clothing, front view on pure white background, professional studio photography, commercial lighting, no person wearing, product photography style
+Variation 2: Black tactical fleece jacket with full zip, military mid-layer clothing, front view on pure white background, professional studio photography, commercial lighting, no person wearing, e-commerce product shot
+Variation 3: Black tactical fleece jacket with full zip, military mid-layer clothing, front view on pure white background, professional studio photography, commercial lighting, no person wearing, professional catalog photography
+
+=== POST-GENERATION CHECKLIST ===
+[ ] Image generated
+[ ] Downloaded in high quality
+[ ] Resized to 800x600px
+[ ] Compressed to <100KB
+[ ] Saved as tac-mid-layer.jpg
+[ ] Uploaded to /public/products/
+[ ] Updated in products.js

@@ -1,0 +1,25 @@
+---
+import Layout from '../../components/Layout.astro';
+---
+
+<Layout title="TAC Mid-Layer">
+  <section class="max-w-4xl mx-auto mt-16 px-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div>
+        <img src="/products/tac-mid-layer.png" alt="TAC Mid-Layer" class="w-full rounded-lg" />
+      </div>
+      <div>
+        <h1 class="text-3xl font-bold mb-4">TAC Mid-Layer</h1>
+        <div class="text-3xl font-bold text-red-600 mb-6">£35.00</div>
+        <div class="mb-6">
+          <h3 class="text-xl font-bold mb-2">Description</h3>
+          <p class="text-gray-700">Warm, breathable mid-layer for tactical and outdoor use.</p>
+        </div>
+        <button onclick="addToCart('tac-mid-layer', 1, '£35.00')" class="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors text-lg w-full">
+          Add to Cart - £35.00
+        </button>
+      </div>
+    </div>
+  </section>
+  <script src="/cart.js" is:inline></script>
+</Layout>

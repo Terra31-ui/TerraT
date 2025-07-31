@@ -1,0 +1,24 @@
+
+PRODUCT: tactical-pen
+FILENAME: tactical-pen.jpg
+STATUS: needed
+
+=== BASIC PROMPT ===
+Black tactical defense pen, military grade writing instrument, white background, product shot
+
+=== ENHANCED PROMPT (RECOMMENDED) ===
+Black tactical defense pen with textured grip, military grade writing instrument, sleek design, pure white background, professional product photography, studio lighting, high resolution
+
+=== ALTERNATIVE VARIATIONS ===
+Variation 1: Black tactical defense pen with textured grip, military grade writing instrument, sleek design, pure white background, professional product photography, studio lighting, high resolution, product photography style
+Variation 2: Black tactical defense pen with textured grip, military grade writing instrument, sleek design, pure white background, professional product photography, studio lighting, high resolution, e-commerce product shot
+Variation 3: Black tactical defense pen with textured grip, military grade writing instrument, sleek design, pure white background, professional product photography, studio lighting, high resolution, professional catalog photography
+
+=== POST-GENERATION CHECKLIST ===
+[ ] Image generated
+[ ] Downloaded in high quality
+[ ] Resized to 800x600px
+[ ] Compressed to <100KB
+[ ] Saved as tactical-pen.jpg
+[ ] Uploaded to /public/products/
+[ ] Updated in products.js

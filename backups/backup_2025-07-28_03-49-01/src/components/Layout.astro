@@ -1,0 +1,84 @@
+---
+import '../styles/global.css';
+
+export interface Props {
+  title?: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{title ? `${title} - TerraTAC` : 'TerraTAC - All Your Tactical Gear Needs'}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Professional tactical gear supplier in the UK. Quality equipment for law enforcement, security, and outdoor professionals." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;700&family=Oswald:wght@400;700&family=Russo+One&family=Orbitron:wght@700&family=Audiowide&display=swap" rel="stylesheet">
+  </head>
+  
+  <body class="min-h-screen flex flex-col bg-gray-50" style="font-family: 'Montserrat', Arial, sans-serif;">
+    <header class="bg-white shadow-lg p-4 flex items-center justify-between sticky top-0 z-50">
+      <div class="flex items-center gap-6">
+        <img
+          src="/favicon.svg"
+          alt="TerraTAC Logo"
+          class="h-20 w-auto hover:scale-105 transition-transform duration-200"
+          loading="lazy"
+        />
+        <h1 class="text-5xl font-extrabold text-gray-800 tracking-wide drop-shadow-md" style="font-family: 'Audiowide', 'Orbitron', 'Russo One', 'Montserrat', Arial, sans-serif; letter-spacing: 0.04em;">
+          TerraTAC
+        </h1>
+      </div>
+      
+      <div class="flex flex-col items-end gap-2">
+        <h2 class="text-2xl font-extrabold text-white bg-gradient-to-r from-blue-700 to-green-600 px-6 py-3 rounded-xl border-4 border-blue-400 shadow-lg tracking-wide animate__animated animate__pulse animate__infinite" style="letter-spacing: 0.08em;">
+          Supporting UK Security &amp; Safety
+        </h2>
+        <ul class="flex flex-wrap gap-2 mt-2 text-base font-semibold text-gray-700">
+          <li>✅ Based in UK</li>
+          <li>✅ Fast Delivery</li>
+          <li>✅ Secure Payment</li>
+          <li>✅ Professional Grade</li>
+        </ul>
+      </div>
+    </header>
+    <main class="flex-1 bg-white">
+      <slot />
+    </main>
+    
+    <footer class="bg-gray-800 text-white text-center py-8 mt-4">
+      <div class="max-w-4xl mx-auto px-4">
+        <div class="flex justify-center space-x-8 mb-4">
+          <a href="/" class="hover:text-blue-400">Home</a>
+          <a href="/cart" class="hover:text-blue-400">Cart</a>
+        </div>
+        <p class="text-sm text-gray-400">&copy; 2025 TerraTAC. All rights reserved.</p>
+        <div class="flex justify-center mt-4">
+          <iframe width="380" height="38" style="border:0;" src="https://climate.stripe.com/badge/ZFqJ9k?theme=light&size=small&locale=en-US"></iframe>
+        </div>
+      </div>
+    </footer>
+    
+    <script>
+      function updateCartCounter() {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const counter = document.getElementById('cart-count');
+        
+        if (cart.length > 0) {
+          const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
+          counter.textContent = totalItems;
+          counter.classList.remove('hidden');
+        } else {
+          counter.classList.add('hidden');
+        }
+      }
+      
+      window.addEventListener('cartUpdated', updateCartCounter);
+      document.addEventListener('DOMContentLoaded', updateCartCounter);
+    </script>
+  </body>
+</html>
