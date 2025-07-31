@@ -46,12 +46,14 @@ const { title } = Astro.props;
   <body class="min-h-screen flex flex-col bg-gray-50" style="font-family: 'Montserrat', Arial, sans-serif;">
     <header class="bg-white shadow-lg p-4 flex items-center justify-between sticky top-0 z-50">
       <div class="flex items-center gap-6">
-        <img
-          src="/favicon.svg"
-          alt="TerraTAC Logo"
-          class="h-20 w-auto hover:scale-105 transition-transform duration-200"
-          loading="lazy"
-        />
+        <a href="/" aria-label="Go to homepage">
+          <img
+            src="/favicon.svg"
+            alt="TerraTAC Logo"
+            class="h-20 w-auto hover:scale-105 transition-transform duration-200 cursor-pointer"
+            loading="lazy"
+          />
+        </a>
         <h1 class="text-5xl font-extrabold text-gray-800 tracking-wide drop-shadow-md" style="font-family: 'Audiowide', 'Orbitron', 'Russo One', 'Montserrat', Arial, sans-serif; letter-spacing: 0.04em;">
           TerraTAC
         </h1>
