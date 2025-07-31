@@ -14,6 +14,16 @@ import Layout from '../../components/Layout.astro';
           <h3 class="text-xl font-bold mb-2">Description</h3>
           <p class="text-gray-700">Professional-grade waterproof and windproof jacket with thermal insulation and multiple utility pockets.</p>
         </div>
+        <label for="size" class="block mb-2 font-semibold text-gray-800">Select UK Unisex Size:</label>
+        <select id="size" name="size" class="mb-4 w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
+          <option value="">Choose a size</option>
+          <option value="XS">XS (UK 6-8)</option>
+          <option value="S">S (UK 8-10)</option>
+          <option value="M">M (UK 12-14)</option>
+          <option value="L">L (UK 16-18)</option>
+          <option value="XL">XL (UK 20-22)</option>
+          <option value="XXL">XXL (UK 24-26)</option>
+        </select>
         <button onclick="addToCart('pro-tac-jacket', 1, '£175.00')" class="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors text-lg w-full">
           Add to Cart - £175.00
         </button>
