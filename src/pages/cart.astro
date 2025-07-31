@@ -88,15 +88,41 @@ import Layout from '../components/Layout.astro';
         }
         return;
       }
-      container.innerHTML = cart.map(item => {
+      container.innerHTML = cart.map((item, idx) => {
         let name = item.name;
         let img = '';
         if (productMap[item.id]) {
           if (!name) name = productMap[item.id].name;
           img = productMap[item.id].img;
         }
-        return `<div class="mb-4 flex items-center gap-4">${img ? `<img src="${img}" alt="${name || item.id}" class="h-16 w-16 object-contain rounded shadow" />` : ''}<span class="text-xl font-bold">${name || item.id}</span> &times; <span class="text-lg">${item.qty}</span> &mdash; <span class="text-lg">${item.price || ''}</span></div>`;
+        return `<div class="mb-4 flex items-center gap-4">${img ? `<img src="${img}" alt="${name || item.id}" class="h-16 w-16 object-contain rounded shadow" />` : ''}
+          <span class="text-xl font-bold">${name || item.id}</span>
+          <button class="bg-gray-200 px-2 py-1 rounded text-lg font-bold hover:bg-gray-300" data-action="decrement" data-idx="${idx}" aria-label="Decrease quantity">−</button>
+          <span class="text-lg min-w-[2ch] text-center">${item.qty}</span>
+          <button class="bg-gray-200 px-2 py-1 rounded text-lg font-bold hover:bg-gray-300" data-action="increment" data-idx="${idx}" aria-label="Increase quantity">+</button>
+          <span class="text-lg">${item.price || ''}</span>
+        </div>`;
       }).join('');
+      // Use event delegation for increment/decrement buttons
+      container.onclick = function(e) {
+        const btn = e.target.closest('button[data-action]');
+        if (!btn) return;
+        const idx = parseInt(btn.getAttribute('data-idx'));
+        const action = btn.getAttribute('data-action');
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        if (cart[idx]) {
+          if (action === 'increment') {
+            cart[idx].qty = (cart[idx].qty || 1) + 1;
+          } else if (action === 'decrement') {
+            cart[idx].qty = (cart[idx].qty || 1) - 1;
+            if (cart[idx].qty < 1) {
+              cart.splice(idx, 1);
+            }
+          }
+          localStorage.setItem('cart', JSON.stringify(cart));
+          window.dispatchEvent(new CustomEvent('cartUpdated'));
+        }
+      };
     }
     document.addEventListener('DOMContentLoaded', renderCart);
     window.addEventListener('cartUpdated', renderCart);
