@@ -201,5 +201,15 @@ export const catalogue = [
     price: "£19.00",
     category: "Bags",
   },
+
+  {
+    id: "tac-balaclava",
+    name: "TAC-Balaclava",
+    img: "/products/TAC-Balaclava.png",
+    href: "/products/tac-balaclava",
+    price: "£20.00",
+    category: "Apparel",
+    description: "Lightweight, breathable tactical balaclava for all-weather protection. Perfect for outdoor, airsoft, and security use. Moisture-wicking, quick-dry fabric. Universal fit."
+  },
 ];
 
