@@ -1,0 +1,140 @@
+---
+import Layout from '../components/Layout-test.astro';
+import Productcard from '../components/Productcard.astro';
+import { catalogue } from '../data/products.js';
+---
+
+<Layout title="All Products - TerraTAC">
+  <section class="bg-red-600 text-white py-16 rounded-xl shadow-lg mb-12 text-center">
+    <div class="flex flex-col items-center gap-2 mb-8">
+      <h2 class="text-3xl font-bold text-white bg-white bg-opacity-10 px-6 py-3 rounded-lg border-2 border-blue-400 shadow-lg tracking-wide animate__animated animate__pulse animate__infinite" style="letter-spacing: 0.08em;">
+        UK Tactical &amp; Personal Protection specialists
+      </h2>
+    </div>
+    <h1 class="text-5xl font-extrabold mb-4 tracking-tight">All Products</h1>
+    <p class="text-xl mb-6">Browse the full TerraTAC tactical and safety catalogue.</p>
+    <ul class="flex flex-wrap gap-4 justify-center text-base font-semibold text-white mb-6">
+      <li>✅ Based in UK</li>
+      <li>✅ Fast Delivery</li>
+      <li>✅ Secure Payment</li>
+      <li>✅ Professional Grade</li>
+    </ul>
+    <a 
+      href="/cart" 
+      class="inline-block text-base font-bold text-black hover:text-white hover:bg-red-600 hover:border-red-700 border-2 border-transparent px-8 py-3 rounded shadow transition-all duration-200"
+    >
+      View Cart
+    </a>
+  </section>
+
+  <section class="mb-8 flex flex-wrap gap-4 justify-center">
+    <button
+      class="bg-blue-200 text-blue-800 px-6 py-2 rounded-full font-bold hover:bg-blue-300 transition active"
+      onclick="filterCategory('All')"
+      type="button"
+      id="filter-All"
+    >
+      All
+    </button>
+    {Array.from(new Set(catalogue.map(p => p.category))).map(category => (
+      <button
+        class="bg-blue-100 text-blue-800 px-6 py-2 rounded-full font-bold hover:bg-blue-200 transition"
+        onclick={`filterCategory('${category}')`}
+        type="button"
+        id={`filter-${category}`}
+      >
+        {category}
+      </button>
+    ))}
+  </section>
+
+  <section class="mb-8 flex flex-wrap gap-4 justify-center items-center">
+    <select id="categoryFilter" class="bg-blue-100 text-blue-800 px-4 py-2 rounded font-bold mr-4" onchange="filterBySelect()">
+      <option value="All">All Categories</option>
+      {Array.from(new Set(catalogue.map(p => p.category))).map(category => (
+        <option value={category}>{category}</option>
+      ))}
+    </select>
+    <input
+      id="searchInput"
+      name="search"
+      type="text"
+      placeholder="Search products..."
+      class="px-4 py-2 rounded border border-gray-300"
+      oninput="filterProducts()"
+    />
+  </section>
+
+  <section class="max-w-6xl mx-auto px-4">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8" id="products-grid">
+      {catalogue.map(product => (
+        <div
+          class="product-card"
+          data-category={product.category}
+          data-name={product.name}
+        >
+          <Productcard {...product} />
+        </div>
+      ))}
+    </div>
+  </section>
+  <script src="/cart.js" is:inline></script>
+</Layout>
+
+<script is:inline>
+  let currentCategory = 'All';
+  let searchTerm = '';
+  
+  function filterCategory(category) {
+    currentCategory = category;
+    // Update visual state of buttons
+    document.querySelectorAll('button[id^="filter-"]').forEach(btn => {
+      btn.classList.remove('bg-blue-200');
+      btn.classList.add('bg-blue-100');
+    });
+    document.getElementById(`filter-${category}`).classList.remove('bg-blue-100');
+    document.getElementById(`filter-${category}`).classList.add('bg-blue-200');
+    // Update select dropdown
+    document.getElementById('categoryFilter').value = category;
+    applyFilters();
+  }
+
+  function filterBySelect() {
+    const select = document.getElementById('categoryFilter');
+    currentCategory = select.value;
+    // Update button states
+    document.querySelectorAll('button[id^="filter-"]').forEach(btn => {
+      btn.classList.remove('bg-blue-200');
+      btn.classList.add('bg-blue-100');
+    });
+    document.getElementById(`filter-${currentCategory}`).classList.remove('bg-blue-100');
+    document.getElementById(`filter-${currentCategory}`).classList.add('bg-blue-200');
+    applyFilters();
+  }
+  
+  function filterProducts() {
+    const searchInput = document.getElementById('searchInput');
+    searchTerm = searchInput.value.toLowerCase();
+    applyFilters();
+  }
+
+  function applyFilters() {
+    document.querySelectorAll('.product-card').forEach(card => {
+      const matchesCategory = currentCategory === 'All' || card.dataset.category === currentCategory;
+      const matchesSearch = searchTerm === '' || 
+        card.dataset.name.toLowerCase().includes(searchTerm) ||
+        card.dataset.category.toLowerCase().includes(searchTerm);
+      if (matchesCategory && matchesSearch) {
+        card.style.display = '';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+
+  // Initialize filter state on page load
+  document.addEventListener('DOMContentLoaded', function() {
+    // Ensure all filter buttons exist before setting initial state
+    setTimeout(() => filterCategory('All'), 0);
+  });
+</script>

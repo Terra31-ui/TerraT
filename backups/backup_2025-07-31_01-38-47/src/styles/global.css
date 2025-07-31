@@ -1,0 +1,68 @@
+body {
+  font-family: "Montserrat", "Oswald", Arial, sans-serif;
+  background-color: #f9fafb;
+  color: #222;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 0.01em;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Bebas Neue", "Oswald", Arial, sans-serif;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-top: 0;
+}
+
+.not-uppercase {
+  text-transform: none !important;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s;
+  font-family: "Montserrat", "Oswald", Arial, sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #1e40af;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+footer {
+  background: none;
+  color: #4b5563;
+  border-top: 1px solid #e5e7eb;
+  margin-top: 4rem;
+  padding: 1.5rem 0;
+  text-align: center;
+  font-size: 0.875rem;
+  font-family: "Montserrat", "Oswald", Arial, sans-serif;
+}
+
+/* Utility classes for colors (if not using Tailwind) */
+.text-brand-blue {
+  color: #1e40af;
+}
+.text-brand-red {
+  color: #dc2626;
+}
+.bg-brand-blue {
+  background-color: #1e40af;
+}
+.bg-brand-red {
+  background-color: #dc2626;
+}
+
+/* Add more global styles as needed */
